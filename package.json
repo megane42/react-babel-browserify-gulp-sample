@@ -1,6 +1,6 @@
 {
   "name": "react-babel-browserify-gulp-sample",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "devDependencies": {
     "react": "^0.13.3",
     "browserify": "^10.2.1",
@@ -10,7 +10,7 @@
     "gulp-webserver": "^0.9.1"
   },
   "scripts": {
-    "build": "browserify --debug --transform babelify app.jsx --outfile bundle.js"
+    "build": "browserify --debug --transform babelify src/main.jsx --outfile app/app.js" 
   },
   "license": "MIT"
 }

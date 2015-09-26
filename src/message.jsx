@@ -18,3 +18,4 @@ var Message = React.createClass({
 
 // エクスポート
 module.exports = Message;
+
