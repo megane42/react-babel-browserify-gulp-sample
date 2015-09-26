@@ -10,13 +10,14 @@ var concat     = require('gulp-concat');
 var css_minify = require('gulp-minify-css');
 
 gulp.task('browserify', function() {
-  browserify('./src/main.jsx', { debug: true })
+  browserify('./src/js/main.jsx', { debug: true })
     .transform(babelify)
     .bundle()
+    .on("error", function (err) { console.log("Error : " + err.message); })
     .pipe(source('app.min.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('./app/'))
+    .pipe(gulp.dest('./app/js/'))
 });
 
 gulp.task('css', function () {
@@ -28,7 +29,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./src/*.jsx', ['browserify']);
+  gulp.watch('./src/js/*.jsx', ['browserify']);
   gulp.watch('./src/css/**/*.css', ['css']);
 });
 
