@@ -1,49 +1,51 @@
 # react-babel-browserify-gulp-sample
 
-これは [React.js](https://facebook.github.io/react/) を学習する為の環境のサンプルです。特徴は次のとおりです。
+* [hkusu/react-babel-browserify-gulp-sample](https://github.com/hkusu/react-babel-browserify-gulp-sample) というシンプルでわかりやすいテンプレを自分用にカスタマイズしたもの。
+* ES2015 や CommonJS の構文が使える。
+* オリジナルの解説: [React.js + Babel + Browserify + gulp の環境を作ってみた](http://qiita.com/hkusu/items/e068bba0ae036b447754)
 
-- ECMAScript 6 構文のサポートおよび JSX ファイルのコンパイルに [Babel](https://babeljs.io/) を利用
-- 依存モジュールの管理(CommonJS準拠)に [Browserify](http://browserify.org/) を利用
-- タスクランナーとして [gulp](http://gulpjs.com/) を利用
+## オリジナルからの主な変更点
 
-## 利用方法
+* ファイル構成の変更
+    * ソースを `src/` 配下に移動
+    * コードはすべて `app/` 配下にビルド
+* Web サーバーで公開する範囲を `app/` 配下のみに限定
+* ビルドした JS コードの minify を実施
+
+## インストール
 
 ```
-$ git clone https://github.com/hkusu/react-babel-browserify-gulp-sample.git
+$ git clone https://github.com/megane42/react-babel-browserify-gulp-sample.git
 $ cd react-babel-browserify-gulp-sample
 $ npm install
+$ npm install -g browserify gulp
 ```
 
-上記のように `$ npm install` を実行することにより、`package.json` の内容に従って本プロジェクトの `node_modules` 配下に今回利用するモジュール郡が展開されます。
+## 開発
 
-メインロジックは `app.jsx` です。これを書き換えて動作確認しながら学習を進めます。
+html は `app/` 配下に書く。JS のコードは `src/` 配下に書いて、以下のコマンドでビルドする。
 
-> 冒頭に書いたとおり ES6 構文の利用および CommonJS スタイルのモジュール管理(require や exports)が利用できます。`message.jsx` はクラスを別ファイルへ分割した例です。
+```
+$ gulp browserify
+```
 
-## 動作確認の方法
+もしくは、一度以下のコマンドで watch しておくと、編集するたびにビルドされる。
 
-`$ npm run build`（または `$ ./node_modules/.bin/gulp browserify`）とすると、`app.jsx` および `app.jsx` から読み込んでいるファイル郡から `bundle.js` が生成されます。
-`bundle.js` は `index.html` で読み込んであるので、`index.html` を適当なブラウザで開いてください。
+```
+$ gulp watch &
+```
 
-もしくは `$ ./node_modules/.bin/gulp` とすることでも `bundle.js` を生成することが出来ます。この場合は gulp のタスクが JSX ファイルの変更を監視しているので、JSX ファイルを修正して保存すると自動的に `bundle.js` が再生成されます。また内部的にWEBサーバが立ち上がっているので、適当なブラウザで `127.0.0.1:8000` にアクセスすることにより動作確認することも出来ます。
+## 確認
 
-> ポート番号(8000)は環境によって異なるかもしれません。
+以下のコマンドで Web サーバーが立ち上がり、`app/` 配下が公開される。
 
-gulp のタスクは `gulpfile.js` で定義しています。挙動を変更する場合は適宜このファイルを書き換えてくだささい。
+```
+$ gulp webserver
+```
 
-## サンプル・アプリケーション
+## TODO
 
-とりあえず簡単なデータバインドを React.js で実装してあります。
-
-![demo](demo.png)
-
-デモは [こちら(GitHub Pages)](http://hkusu.github.io/react-babel-browserify-gulp-sample/) で確認できます。
-
-実装内容については `app.jsx` および `message.jsx` をご覧ください。
-
-## ほか
-
-詳細については『[React.js + Babel + Browserify + gulp の環境を作ってみた](http://qiita.com/hkusu/items/e068bba0ae036b447754)』に書きました。
+テストできるようにしたい。
 
 ## License
 
