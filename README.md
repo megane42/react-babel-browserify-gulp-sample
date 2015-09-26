@@ -1,15 +1,16 @@
 # react-babel-browserify-gulp-sample
 
-* [hkusu/react-babel-browserify-gulp-sample](https://github.com/hkusu/react-babel-browserify-gulp-sample) というシンプルでわかりやすいテンプレを自分用にカスタマイズしたもの。
-* ES2015 や CommonJS の構文が使える。
-* オリジナルの解説: [React.js + Babel + Browserify + gulp の環境を作ってみた](http://qiita.com/hkusu/items/e068bba0ae036b447754)
+* [hkusu/react-babel-browserify-gulp-sample](https://github.com/hkusu/react-babel-browserify-gulp-sample) を自分用にカスタマイズしたもの。
+* オリジナルの特徴:
+    * シンプルでとてもわかりやすい。
+    * ES2015 や CommonJS の構文が使える。
+    * 詳細: [React.js + Babel + Browserify + gulp の環境を作ってみた](http://qiita.com/hkusu/items/e068bba0ae036b447754)
 
 ## オリジナルからの主な変更点
 
 * ファイル構成の変更
-    * ソースを `src/` 配下に移動
-    * コードはすべて `app/` 配下にビルド
-* Web サーバーで公開する範囲を `app/` 配下のみに限定
+    * JS のソースは `src/` 配下へ
+    * 公開するファイルは `app/` 配下へ
 * ビルドした JS コードの minify を実施
 
 ## インストール
@@ -45,7 +46,7 @@ $ gulp webserver
 
 ## TODO
 
-テストできるようにしたい。
+* テストできるようにしたい。
 
 ## License
 
