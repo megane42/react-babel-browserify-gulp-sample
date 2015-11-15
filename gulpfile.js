@@ -10,7 +10,7 @@ var concat     = require('gulp-concat');
 var css_minify = require('gulp-minify-css');
 
 gulp.task('browserify', function() {
-  browserify('./src/js/main.jsx', { debug: true })
+  browserify('./src/js/main.js', { debug: true })
     .transform(babelify)
     .bundle()
     .on("error", function (err) { console.log("Error : " + err.message); })
@@ -28,17 +28,17 @@ gulp.task('css', function () {
       .pipe(gulp.dest('./app/css/'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('./src/js/*.jsx', ['browserify']);
-  gulp.watch('./src/css/**/*.css', ['css']);
-});
-
 gulp.task('webserver', function() {
   gulp.src('./app')
     .pipe(webserver({
       host: '0.0.0.0',
       livereload: true
     }));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('./src/js/*.jsx', ['browserify']);
+  gulp.watch('./src/css/**/*.css', ['css']);
 });
 
 gulp.task('default', ['browserify', 'css', 'watch', 'webserver']);

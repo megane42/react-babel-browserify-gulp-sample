@@ -12,7 +12,8 @@
     "gulp-webserver": "^0.9.1",
     "react": "^0.13.3",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "flux": "^2.1.0"
   },
   "scripts": {
     "build": "browserify --debug --transform babelify src/main.jsx --outfile app/app.js"
