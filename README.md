@@ -5,6 +5,7 @@
     * シンプルでとてもわかりやすい。
     * ES2015 や CommonJS の構文が使える。
     * 詳細: [React.js + Babel + Browserify + gulp の環境を作ってみた](http://qiita.com/hkusu/items/e068bba0ae036b447754)
+* flux アーキテクチャを導入した拡張版を `flux` ブランチに追加した。
 
 ## オリジナルからの主な変更点
 
