@@ -13,6 +13,7 @@
     * 公開するファイルは `app/` 配下へ
 * CSS も結合 & minify できるようにした
 * ビルドしたコードの minify を実施
+* [maechabin/flux-dipatcherjs-sample](https://github.com/maechabin/flux-dipatcherjs-sample) をベースに flux アーキテクチャを導入
 
 ## インストール
 
