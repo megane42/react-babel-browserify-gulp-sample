@@ -1,10 +1,11 @@
 var React      = require("react");
+var ReactDom   = require("react-dom");
 var AppActions = require("../actions/AppActions");
 
 var Form = React.createClass ({
     send: function (e) {
         e.preventDefault();
-        var input = React.findDOMNode(this.refs.input);
+        var input = ReactDom.findDOMNode(this.refs.input);
         AppActions.reload(input.value.trim());
         input.value = "";
     },
